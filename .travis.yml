@@ -1,0 +1,13 @@
+language: go
+
+os: linux
+
+before_install:
+  - wget https://github.com/ninja-build/ninja/releases/download/v1.10.0/ninja-linux.zip
+  - sudo apt install unzip
+  - sudo unzip ninja-linux.zip -d /usr/local/bin/
+
+script:
+  - cd build/
+  - ./out/bin/bood
+  - cat ./out/bin/test.txt
